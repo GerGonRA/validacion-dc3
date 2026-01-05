@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación DC-3 | Grupo SEG Consulting</title>
+    <style>
+        :root {
+            --bg-dark: #121826;
+            --card-bg: #1e2533;
+            --accent-gold: #c5a059;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --table-header: #2d3748;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Marca de agua optimizada para fondo oscuro */
+        .watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            background-image: url('marca-seguridad_1585x157.png');
+            background-repeat: repeat;
+            transform: rotate(-20deg) scale(1.5);
+            opacity: 0.04; /* Ajustado para que sea sutil pero visible sobre oscuro */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Encabezado Responsivo */
+        .header-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .header-logos img {
+            max-height: 50px;
+            width: auto;
+            filter: brightness(1.1); /* Realza los logos en fondo oscuro */
+        }
+
+        /* Títulos */
+        .brand-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .brand-section h1 {
+            color: var(--accent-gold);
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .brand-section p {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .system-banner {
+            background: var(--accent-gold);
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Cuadrícula de Información */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card-title {
+            background: var(--accent-gold);
+            color: #000;
+            margin: -20px -20px 20px -20px;
+            padding: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+
+        .info-detail p { margin: 8px 0; font-size: 0.95rem; }
+        .info-detail strong { color: var(--accent-gold); }
+
+        /* Tabla Estilizada */
+        .table-wrapper {
+            overflow-x: auto;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        th {
+            background: var(--table-header);
+            color: var(--accent-gold);
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+        }
+
+        tr:hover { background: rgba(255,255,255,0.03); }
+
+        /* Visor PDF */
+        .pdf-section {
+            margin-top: 50px;
+        }
+
+        .pdf-container {
+            background: #fff;
+            border-radius: 8px;
+            padding: 10px;
+            height: 600px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.4);
+            border-top: 1px solid var(--accent-gold);
+            text-align: center;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        footer a { color: var(--accent-gold); text-decoration: none; }
+
+        /* Responsividad */
+        @media (max-width: 600px) {
+            .brand-section h1 { font-size: 1.8rem; }
+            .header-logos img { max-height: 35px; }
+            .pdf-container { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="watermark"></div>
+
+<div class="container">
+    <header class="header-logos">
+        <img src="logo-actualizat_950x262.png" alt="Logo 1">
+        <img src="logo-cenapred_950x262.png" alt="Logo 2">
+        <img src="Logo-horizontal-1118x223.png" alt="Logo 3">
+        <img src="logo-stps_950x262.png" alt="Logo 4">
+        <img src="Logo-capacita-t_482x210" alt="Logo 5">
+    </header>
+
+    <div class="brand-section">
+        <h1>Grupo SEG Consulting</h1>
+        <p>"Innovando la Seguridad Industrial en México"</p>
+    </div>
+
+    <div class="system-banner">
+        Sistema de Validación de Constancias de Habilidades Laborales DC-3
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="card-title">DATOS DEL PARTICIPANTE</div>
+            <div class="info-detail">
+                <p><strong>Nombre:</strong> Ing. Juana Sarahi Apolonio Salazar</p>
+                <p><strong>CURP:</strong> AOSJ980117MDFPLN02</p>
+                <p><strong>RFC:</strong> AOSJ9801174S6</p>
+            </div>
+        </div>
+        <div class="info-card">
+            <div class="card-title">DATOS DEL INSTRUCTOR</div>
+            <div class="info-detail">
+                <p><strong>Nombre:</strong> Ing. Gerardo Gonzalez Ramirez</p>
+                <p><strong>Folio STPS:</strong> GORG-900526-7C0-0003</p>
+                <p><strong>RFC:</strong> GORG9005267C0</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>ITEM</th>
+                    <th>CURSO</th>
+                    <th>DURACIÓN</th>
+                    <th>INICIO</th>
+                    <th>FIN</th>
+                </tr>
+            </thead>
+            <tbody id="lista-cursos">
+                </tbody>
+        </table>
+    </div>
+
+    <div class="pdf-section">
+        <div class="system-banner">Documentación de Registro STPS</div>
+        <div class="pdf-container">
+            <embed src="REGISTRO_ACE_STPS-GORG9005267C0-0003.pdf" type="application/pdf" width="100%" height="100%" />
+        </div>
+    </div>
+</div>
+
+<footer>
+    <strong>Grupo SEG Consulting</strong><br>
+    "Innovando la seguridad Industrial en México"<br>
+    Tel: +52 (56) 36108298 | <a href="mailto:info@gruposegconsulting.com">info@gruposegconsulting.com</a><br>
+    <a href="https://gruposegconsulting.com/" target="_blank">www.gruposegconsulting.com</a><br>
+    Via Jose Lopez Portillo No.100, Col. Villa de las Flores, Coacalco de Berriozabal, Edo. Méx.
+</footer>
+
+<script>
+    const data = [
+        {"ITEM": 1, "CURSO": "NOM-031-STPS-2011, CONSTRUCCIÓN-CONDICIONES DE SEGURIDAD Y SALUD EN EL TRABAJO.", "DURACION": "8 HORAS", "INICIO": "2025-12-12", "FIN": "2025-12-13"},
+        {"ITEM": 2, "CURSO": "NOM-009-STPS-2011, TRABAJOS EN ALTURA.", "DURACION": "8 HORAS", "INICIO": "2025-12-11", "FIN": "2025-12-11"},
+        {"ITEM": 3, "CURSO": "NOM-027-STPS-2008, SOLDADURA Y CORTE.", "DURACION": "8 HORAS", "INICIO": "2025-12-10", "FIN": "2025-12-10"},
+        {"ITEM": 4, "CURSO": "NOM-029-STPS-2011, INSTALACIONES ELÉCTRICAS.", "DURACION": "8 HORAS", "INICIO": "2025-12-09", "FIN": "2025-12-09"},
+        {"ITEM": 5, "CURSO": "NOM-033-STPS-2015, ESPACIOS CONFINADOS.", "DURACION": "8 HORAS", "INICIO": "2025-12-08", "FIN": "2025-12-08"},
+        {"ITEM": 6, "CURSO": "NOM-005-STPS-1998, SUSTANCIAS QUÍMICAS PELIGROSAS.", "DURACION": "8 HORAS", "INICIO": "2025-12-06", "FIN": "2025-12-06"},
+        {"ITEM": 7, "CURSO": "NOM-017-STPS-2008, EQUIPO DE PROTECCIÓN PERSONAL.", "DURACION": "8 HORAS", "INICIO": "2025-12-05", "FIN": "2025-12-05"},
+        {"ITEM": 8, "CURSO": "NOM-018-STPS-2015, IDENTIFICACIÓN DE PELIGROS.", "DURACION": "4 HORAS", "INICIO": "2025-12-04", "FIN": "2025-12-04"},
+        {"ITEM": 9, "CURSO": "NOM-019-STPS-2011, COMISIONES DE SEGURIDAD.", "DURACION": "16 HORAS", "INICIO": "2025-12-03", "FIN": "2025-12-03"},
+        {"ITEM": 10, "CURSO": "NOM-030-STPS-2009, SERVICIOS PREVENTIVOS.", "DURACION": "16 HORAS", "INICIO": "2025-12-01", "FIN": "2025-12-02"},
+        {"ITEM": 11, "CURSO": "MULTIBRIGADAS DE EMERGENCIAS", "DURACION": "4 HORAS", "INICIO": "2025-11-28", "FIN": "2025-11-29"},
+        {"ITEM": 12, "CURSO": "OPERACIÓN SEGURA DE MONTACARGAS", "DURACION": "8 HORAS", "INICIO": "2025-12-03", "FIN": "2025-12-03"},
+        {"ITEM": 13, "CURSO": "NOM-002-STPS-2010, PREVENCIÓN DE INCENDIOS.", "DURACION": "16 HORAS", "INICIO": "2025-11-27", "FIN": "2025-11-27"},
+        {"ITEM": 14, "CURSO": "MANIOBRAS E IZAJES SIMPES Y CRÍTICOS", "DURACION": "8 HORAS", "INICIO": "2025-11-25", "FIN": "2025-11-26"},
+        {"ITEM": 15, "CURSO": "ARMADO DE ANDAMIOS TUBULARES", "DURACION": "8 HORAS", "INICIO": "2025-11-24", "FIN": "2025-11-24"},
+        {"ITEM": 16, "CURSO": "BRIGADA DE COMBATE CONTRA INCENDIOS", "DURACION": "8 HORAS", "INICIO": "2025-11-22", "FIN": "2025-11-22"},
+        {"ITEM": 17, "CURSO": "BRIGADA DE EVACUACIÓN", "DURACION": "8 HORAS", "INICIO": "2025-11-21", "FIN": "2025-11-21"},
+        {"ITEM": 18, "CURSO": "BRIGADA DE BÚSQUEDA Y RESCATE", "DURACION": "8 HORAS", "INICIO": "2025-11-20", "FIN": "2025-11-20"},
+        {"ITEM": 19, "CURSO": "BRIGADA DE PRIMEROS AUXILIOS", "DURACION": "24 HORAS", "INICIO": "2025-11-19", "FIN": "2025-11-19"},
+        {"ITEM": 20, "CURSO": "SUPERVISOR DE SEGURIDAD E HIGIENE", "DURACION": "8 HORAS", "INICIO": "2025-11-15", "FIN": "2025-11-18"},
+        {"ITEM": 21, "CURSO": "TRABAJOS CON HERRAMIENTA DE PODER", "DURACION": "8 HORAS", "INICIO": "2025-11-14", "FIN": "2025-11-14"},
+        {"ITEM": 22, "CURSO": "OPERACIÓN SEGURA DE PLATAFORMAS", "DURACION": "4 HORAS", "INICIO": "2025-11-13", "FIN": "2025-11-13"},
+        {"ITEM": 23, "CURSO": "SEGURIDAD VIAL Y TRANSITO", "DURACION": "8 HORAS", "INICIO": "2025-11-12", "FIN": "2025-11-12"},
+        {"ITEM": 24, "CURSO": "OPERACIÓN SEGURA DE HERRAMIENTAS ROTATORIAS", "DURACION": "16 HORAS", "INICIO": "2025-11-10", "FIN": "2025-11-12"},
+        {"ITEM": 25, "CURSO": "BLOQUEO CANDADEO Y ETIQUETADO", "DURACION": "8 HORAS", "INICIO": "2025-11-07", "FIN": "2025-11-08"},
+        {"ITEM": 26, "CURSO": "ENSAMBLE E INSTALACIONES DE RACKS", "DURACION": "N/A", "INICIO": "2025-11-11", "FIN": "2025-11-11"}
+    ];
+
+    const tableBody = document.getElementById('lista-cursos');
+    data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.ITEM}</td>
+            <td style="color:white; font-weight:600;">${item.CURSO}</td>
+            <td>${item.DURACION}</td>
+            <td>${item.INICIO}</td>
+            <td>${item.FIN}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+</script>
+</body>
+</html>
